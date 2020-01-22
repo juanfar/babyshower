@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@core/services/auth.service';
+import { Product } from '@core/models/product.model';
 
 @Component({
   selector: 'app-products-list',
@@ -8,7 +9,7 @@ import { AuthService } from '@core/services/auth.service';
 })
 export class ProductsListComponent implements OnInit {
 
-  listaProducts: any;
+  listaProducts: Array<Product>;
   miUsuario: string;
 
   constructor(
@@ -20,27 +21,37 @@ export class ProductsListComponent implements OnInit {
       {
         id: '1',
         name: 'zapatos',
-        comprador: 'yo'
+        comprador: 'yo',
+        disponible: false,
+        precio: '1000'
       },
       {
         id: '2',
         name: 'pantalon',
-        comprador: 'mafe'
+        comprador: 'mafe',
+        disponible: false,
+        precio: '1000'
       },
       {
-        id: '1',
+        id: '3',
         name: 'camisa',
-        comprador: ''
+        comprador: '',
+        disponible: false,
+        precio: '1000'
       },
       {
-        id: '1',
+        id: '4',
         name: 'gorra',
-        comprador: 'cristina'
+        comprador: 'cristina',
+        disponible: false,
+        precio: '1000'
       },
       {
-        id: '1',
+        id: '5',
         name: 'medias',
-        comprador: ''
+        comprador: '',
+        disponible: false,
+        precio: '1000'
       },
     ];
   }

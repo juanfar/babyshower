@@ -1,0 +1,15 @@
+
+<ul>
+  <li *ngFor="let item of listaProducts">
+    <a href=""
+      type="button"
+      [ngClass]="{
+        'mio' : item.comprador === miUsuario,
+        'otro' : item.comprador !== miUsuario && item.comprador !== ''
+      }">
+      <p>{{item.id}}</p>
+      <p>{{item.name}}</p>
+      <hr>
+    </a>
+  </li>
+</ul>

@@ -9,6 +9,7 @@
       "@page-not-found/*": ["src/app/page-not-found/*"],
       "@home/*": ["src/app/home/*"],
       "@profile/*": ["src/app/profile/*"],
+      "@products/*": ["src/app/products/*"],
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

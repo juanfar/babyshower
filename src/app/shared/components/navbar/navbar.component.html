@@ -14,11 +14,11 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav" *ngIf="auth.loggedIn">
         <li>
-          <a class="nav-link" routerLink="/products"><i class="fas fa-shopping-cart" *ngIf="auth.loggedIn"></i></a>
+          <a class="nav-link" routerLink="/products"><i class="fas fa-shopping-cart"></i></a>
         </li>
-        <li class="nav-item dropdown" *ngIf="auth.loggedIn">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{ user }}
           </a>

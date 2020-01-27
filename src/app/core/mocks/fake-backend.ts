@@ -4,6 +4,10 @@ import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import { ProductsModule } from '@products/products.module';
 
+const regalos = [];
+
+localStorage.setItem('products', JSON.stringify(regalos));
+
 let products = JSON.parse(localStorage.getItem('products')) || [];
 
 @Injectable()

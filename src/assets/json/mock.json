@@ -1,0 +1,14 @@
+[
+    {
+        "nombre": "SILLA PARA COMER",
+        "precio": "19",
+        "img": "https://www.ikea.com/es/es/images/products/antilop-highchair-with-tray__0727481_PE735706_S5.JPG?f=s",
+        "url": "https://www.ikea.com/es/es/p/antilop-trona-con-bandeja-gris-plata-blanco-gris-plata-s29067293/"
+    },
+    {
+        "nombre": "ALIMENTADOR ANTIAHOGO BEBE ",
+        "precio": "12",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/61ecu4VFuxL._SL1200_.jpg",
+        "url": "https://www.amazon.es/ANGELBLISS-Alimentador-antiahogo-chupete-alimentador/dp/B07WK2ZMWJ/ref=redir_mobile_desktop?_encoding=UTF8&psc=1&ref_=sspa_mw_detail_1"
+    }
+]

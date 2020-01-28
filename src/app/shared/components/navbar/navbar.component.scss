@@ -1,8 +1,91 @@
+@import "variables";
+@import "mixins";
+@import "page";
+
 :host {
-  ul {
-    display: flex;
-    li {
-      margin-right: 20px;
+  // Styling for the navbar
+  #mainNav {
+    background-color: $gray-900;
+    .navbar-toggler {
+      font-size: 12px;
+      right: 0;
+      padding: 13px;
+      text-transform: uppercase;
+      color: white;
+      border: 0;
+      background-color: $primary;
+      @include heading-font;
+    }
+    .navbar-brand {
+      color: $primary;
+      @include script-font;
+      &.active,
+      &:active,
+      &:focus,
+      &:hover {
+        color: darken($primary, 10%);
+      }
+    }
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          font-size: 90%;
+          font-weight: 400;
+          padding: 0.75em 0;
+          letter-spacing: 1px;
+          color: white;
+          @include heading-font;
+          &.active,
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    #mainNav {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+      -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+      transition: padding-top 0.3s, padding-bottom 0.3s;
+      opacity: 0.9;
+      .navbar-brand {
+        font-size: 1.75em;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+      #navbarResponsive {
+        .right-menu {
+          flex: 1;
+          justify-content: flex-end;
+        }
+        .left-menu {
+          flex: 1;
+          justify-content: center;
+        }
+        .navbar-nav {
+          .nav-item {
+            .nav-link {
+              padding: 1.1em 1em !important;
+            }
+          }
+          .nav-button {
+            margin-top: 0.75em !important;
+          }
+        }
+      }
+      &.navbar-shrink {
+        padding-top: 0;
+        padding-bottom: 0;
+        background-color: $gray-900;
+        .navbar-brand {
+          font-size: 1.25em;
+          padding: 12px 0;
+        }
+      }
     }
   }
 }

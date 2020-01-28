@@ -1,0 +1,67 @@
+@import "variables";
+@import "mixins";
+@import "page";
+
+// Styling for the masthead
+:host {
+  header.masthead {
+    height: 100vh;
+    text-align: center;
+    color: white;
+    background-image: url("../../../../assets/img/img1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .container {
+      width: 100%;
+      max-width: 650px;
+      height: auto;
+      .responsive {
+        width: 100%;
+        height: auto;
+      }
+      .count {
+        position: absolute;
+        display: flex;
+        flex-flow: row nowrap;
+        bottom: 36%;
+        right: 28%;
+        .dias,
+        .horas,
+        .minutos,
+        .segundos {
+          display: flex;
+          margin-left: 5%;
+          color: #b3b2b3;
+        }
+        .titles {
+          font-size: 0.05em;
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    header.masthead {
+      .container {
+        .count {
+          bottom: 25%;
+          right: 38%;
+          .titles {
+            font-size: 1em;
+          }
+          .values {
+            font-size: 2em;
+          }
+        }
+      }
+    }
+  }
+}

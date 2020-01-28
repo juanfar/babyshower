@@ -1,0 +1,171 @@
+[
+    {
+        "nombre": "SILLA PARA COMER",
+        "precio": "19",
+        "img": "https://www.ikea.com/es/es/images/products/antilop-highchair-with-tray__0727481_PE735706_S5.JPG?f=s",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.ikea.com/es/es/p/antilop-trona-con-bandeja-gris-plata-blanco-gris-plata-s29067293/"
+    
+    },
+    {
+        "nombre": "ALIMENTADOR ANTIAHOGO BEBE",
+        "precio": "12",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/61ecu4VFuxL._SL1200_.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/ANGELBLISS-Alimentador-antiahogo-chupete-alimentador/dp/B07WK2ZMWJ/ref=redir_mobile_desktop?_encoding=UTF8&psc=1&ref_=sspa_mw_detail_1"
+    },
+    {
+        "nombre": "KIT DE UÑAS",
+        "precio": "15",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/61HuTDlLjXL._SL1000_.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/Lictin-Set-para-Cuidado-Beb%C3%A9/dp/B07R44X1NQ/ref=mp_s_a_1_2?keywords=kit+de+ba%C3%B1o+bebe&qid=1579440512&sprefix=Kit+de+ba%C3%B1o+&sr=8-2"
+    },
+    {
+        "nombre": "TETEROS",
+        "precio": "32",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/61Kr2%2BxZ9AL._SL1500_.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/biberones-NUK-polipropileno-parecido-materno/dp/B06XJ9V23M/ref=pd_aw_sim_194_56?_encoding=UTF8&pd_rd_i=B06XJ9V23M&pd_rd_r=3b737235-80e7-4338-8963-5e7d4b4bceee&pd_rd_w=DNF4p&pd_rd_wg=cBhw9&pf_rd_p=74a072c6-02c6-4086-81a4-060e7a6b2ea8&pf_rd_r=H2H7J4PKDGZSN8MHSYP5&psc=1&refRID=8E8YNP20Z761BVKYFTGC"
+    },
+    {
+        "nombre": "SECADOR DE BIBERON",
+        "precio": "13",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/610CkCp5wSL._SL1500_.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/Escurridor-biberones%EF%BC%8CEscurre-biberon%EF%BC%8CExtractores-chupetes%EF%BC%8CEscurre-Biberones/dp/B07W1DPSCT/ref=redir_mobile_desktop?_encoding=UTF8&psc=1&ref_=sspa_mw_detail_5"
+    },
+    {
+        "nombre": "CAMBIADOR",
+        "precio": "10",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/71FCs8NWsfL._SL1500_.jpg.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/Cambiador-Bellestyle-Impermeable-Esterilla-Completamente/dp/B07RLS2S3D/ref=mp_s_a_1_15?keywords=cambiador+bebe&qid=1579441477&sr=8-15"
+    },
+    {
+        "nombre": "CUNA",
+        "precio": "147",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/61eNlWrCZWL._SL1000_.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/MINICUNA-COLECHO-COMPLETA-Incluye-desmontable/dp/B01H3G60KC/ref=mp_s_a_1_19?keywords=cuna+bebe&qid=1579444743&sprefix=Cuna&sr=8-19https://www.amazon.es/Babycare-Almohada-Plagiocefalia-Desenfundable-Generaci%C3%B3n/dp/B07LDF7RZL/ref=mp_s_a_1_13_sspa?keywords=almohada+bebe&qid=1579445696&sprefix=Almo&sr=8-13-spons&psc=1&spLa="
+    },
+    {
+        "nombre": "TAPETE",
+        "precio": "30",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/61mlJjW-12L._SL1000_.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/VeloVendo-Alfombra-Infantiles-Certificado-N%C3%BAmeros/dp/B072C2LJPV/ref=mp_s_a_1_16?keywords=tapete+para+bebe&qid=1579445359&sr=8-16"
+    },
+    {
+        "nombre": "ALMOHADA",
+        "precio": "20",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/71d-2wPuDqL._SL1500_.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/Babycare-Almohada-Plagiocefalia-Desenfundable-Generaci%C3%B3n/dp/B07LDF7RZL/ref=mp_s_a_1_13_sspa?keywords=almohada+bebe&qid=1579445696&sprefix=Almo&sr=8-13-spons&psc=1&spLa="
+    },
+    {
+        "nombre": "NIDO BEBE",
+        "precio": "40",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/81sazJJMouL._SL1500_.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/Babycare-Almohada-Plagiocefalia-Desenfundable-Generaci%C3%B3n/dp/B07LDF7RZL/ref=mp_s_a_1_13_sspa?keywords=almohada+bebe&qid=1579445696&sprefix=Almo&sr=8-13-spons&psc=1&spLa="
+    },
+    {
+        "nombre": "KIT DE BAÑO",
+        "precio": "40",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/81BdwyldZtL._SL1500_.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/Beb%C3%A9-caja-regalo-rosa-Talla/dp/B07Q38J6CD/ref=mp_s_a_1_3?keywords=regalos%2Bpara%2Bbebes%2Brecien%2Bnacidos&qid=1579446513&sprefix=Regalos%2Bpara%2B&sr=8-3&th=1&psc=1"
+    },
+    {
+        "nombre": "TOALLA DE BAÑO",
+        "precio": "20",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/61gbrg2Sf0L._SL1001_.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/Pajamas-capucha-calidad-dibujos-animados/dp/B07P8V2TLY/ref=sr_1_4?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=bata+bebe+ba%C3%B1era&qid=1580157918&sr=8-4"
+    },
+    {
+        "nombre": "SET DE REGALO",
+        "precio": "28",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/61zYfgh5jLL._SL1500_.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/regalo-prendas-meses-blanco-Stars/dp/B075MTT5XR/ref=mp_s_a_1_113?keywords=regalos%2Bpara%2Bbebes%2Brecien%2Bnacidos&qid=1579447185&sprefix=Regalos%2Bpara%2B&sr=8-113&th=1"
+    },
+    {
+        "nombre": "JUGUETES",
+        "precio": "17",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/61lgCSJm-bL._SL1001_.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/Liteness-Mordedor-educaci%C3%B3n-dentici%C3%B3n-Dentici%C3%B3n/dp/B07QR5XN6R/ref=mp_s_a_1_128?keywords=regalos%2Bpara%2Bbebes%2Brecien%2Bnacidos&qid=1579447303&sprefix=Regalos%2Bpara%2B&sr=8-128&th=1&psc=1"
+    },
+    {
+        "nombre": "PAÑALERA",
+        "precio": "20",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/71-tUbcd4mL._SL1325_.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/DOKEHOM-Organizador-Multifuncional-Almacenamiento-Compartimentos/dp/B07D2WP3C3/ref=redir_mobile_desktop?_encoding=UTF8&psc=1&ref_=sspa_mw_detail_2"
+    },
+    {
+        "nombre": "MANTAS",
+        "precio": "29",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/81a71hTWTTL._SL1500_.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/Envoltura-Muselina-Momcozy-Multiuso-Cuadradas/dp/B07JY8K44B/ref=mp_s_a_1_281?keywords=regalos+para+bebes+recien+nacidos&qid=1579447820&sprefix=Regalos+para+&sr=8-281"
+    },
+    {
+        "nombre": "SET DE VAJILLA",
+        "precio": "15",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/81Kb8BKv8PL._SL1500_.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/Jan%C3%A9-070191C01-Juegos-de-vajilla/dp/B01N7XMYT4/ref=redir_mobile_desktop?_encoding=UTF8&psc=1&ref_=ox_sc_act_image_1&smid=A1AT7YVPFBWXBL"
+    },
+    {
+        "nombre": "CANASTILLA BEBÉ",
+        "precio": "59",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/41zyT3pp5zL.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/Canastilla-beb%C3%A9-unisex-Happy-Baby/dp/B00YC88AX0/ref=redir_mobile_desktop?_encoding=UTF8&psc=1&ref_=ox_sc_act_image_2&smid=AWCHJSTEYLKH7"
+    },
+    {
+        "nombre": "ALBÚM",
+        "precio": "20",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/41zyT3pp5zL.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/%C3%81lbum-Mr-Wonderful-primer-a%C3%B1ito/dp/B07CG8328M/ref=redir_mobile_desktop?_encoding=UTF8&psc=1&ref_=ox_sc_act_image_4&smid=A1AT7YVPFBWXBL"
+    },
+    {
+        "nombre": "SET DE REGALO",
+        "precio": "16",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/817vDNBw4tL._SL1500_.jpg",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.amazon.es/Set-regalo-nacimiento-Danielstore-Compuesto/dp/B07QKDTLY2/ref=redir_mobile_desktop?_encoding=UTF8&psc=1&ref_=ox_sc_act_image_5&smid=A1EWUPH9G59JA8"
+    },
+    {
+        "nombre": "PACK BODIES",
+        "precio": "10",
+        "img": "https://primedia.primark.com/i/primark/121473183-01-Black-And-White-Babygrows-7Pk?w=1000&img404=missing_product&locale=es-*,en-*,*",
+        "fracionar": false,
+        "compradores": [],
+        "url": "https://www.primark.com/es/las-categorias/ninos/bebe/lo-basico-para-tu-bebe/pack-de-7-bodis-de-bebe-en-blanco-y-negro/p/121473183"
+    }
+]

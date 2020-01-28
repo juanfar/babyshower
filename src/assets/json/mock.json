@@ -167,21 +167,5 @@
         "fracionar": false,
         "compradores": [],
         "url": "https://www.primark.com/es/las-categorias/ninos/bebe/lo-basico-para-tu-bebe/pack-de-7-bodis-de-bebe-en-blanco-y-negro/p/121473183"
-    },
-    {
-        "nombre": "SACO DE DORMIR",
-        "precio": "14",
-        "img": "https://primedia.primark.com/i/primark/125823540-01-Newborn-Winnie-The-Pooh-Sleeping-Bag?w=1000&img404=missing_product&locale=es-*,en-*,*",
-        "fracionar": false,
-        "compradores": [],
-        "url": "https://www.primark.com/es/las-categorias/ninos/bebe/lo-basico-para-tu-bebe/saco-de-dormir-para-recien-nacido-de-winnie-the-pooh/p/125823540"
-    },
-    {
-        "nombre": "MANTA",
-        "precio": "12",
-        "img": "https://primedia.primark.com/i/primark/127763561-01-Winne-The-Pooh-Blanket?w=1000&img404=missing_product&locale=es-*,en-*,*",
-        "fracionar": false,
-        "compradores": [],
-        "url": "https://www.primark.com/es/las-categorias/ninos/bebe/accesorios-para-bebe/manta-de-winne-the-pooh/p/127763561"
     }
 ]

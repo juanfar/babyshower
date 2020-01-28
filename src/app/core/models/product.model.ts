@@ -1,8 +1,8 @@
 export interface Product {
-  comprador?: string;
-  disponible: boolean;
-  id: string;
-  name: string;
+  nombre: string;
   precio: string;
-  url?: string;
+  img: string;
+  fracionar: boolean;
+  compradores?: string[];
+  url: string;
 }

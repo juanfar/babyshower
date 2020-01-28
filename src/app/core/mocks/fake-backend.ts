@@ -2,9 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
-import { ProductsModule } from '@products/products.module';
+import listaRegalos from '@assets/json/mock.json';
 
-let products = JSON.parse(localStorage.getItem('products')) || [];
+const regalos = listaRegalos || [];
+
+localStorage.setItem('products', JSON.stringify(regalos));
+
+const products = JSON.parse(localStorage.getItem('products')) || [];
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -25,7 +29,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return getProductById();
                 default:
                     return next.handle(request);
-            }    
+            }
         }
 
         // route functions
@@ -35,14 +39,14 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         }
 
         function getProductById() {
-            const user = products.find(x => x.id == idFromUrl());
+            const user = products.find(x => x.id === idFromUrl());
             return ok(user);
         }
 
         // helper functions
 
         function ok(body?) {
-            return of(new HttpResponse({ status: 200, body }))
+            return of(new HttpResponse({ status: 200, body }));
         }
 
         function idFromUrl() {

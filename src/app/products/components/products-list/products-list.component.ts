@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@core/services/auth.service';
 import { Product } from '@core/models/product.model';
+import { ProductsService } from '@core/services/products.service';
 
 @Component({
   selector: 'app-products-list',
@@ -9,54 +10,26 @@ import { Product } from '@core/models/product.model';
 })
 export class ProductsListComponent implements OnInit {
 
-  listaProducts: Array<Product>;
+  listaProducts: Product[];
   miUsuario: string;
 
   constructor(
-    private auth: AuthService
+    private auth: AuthService,
+    private productsService: ProductsService
   ) {
-    console.log(this.auth.userProfile$.source);
-    this.miUsuario = 'yo';
-    this.listaProducts = [
-      {
-        id: '1',
-        name: 'zapatos',
-        comprador: 'yo',
-        disponible: false,
-        precio: '1000'
-      },
-      {
-        id: '2',
-        name: 'pantalon',
-        comprador: 'mafe',
-        disponible: false,
-        precio: '1000'
-      },
-      {
-        id: '3',
-        name: 'camisa',
-        comprador: '',
-        disponible: false,
-        precio: '1000'
-      },
-      {
-        id: '4',
-        name: 'gorra',
-        comprador: 'cristina',
-        disponible: false,
-        precio: '1000'
-      },
-      {
-        id: '5',
-        name: 'medias',
-        comprador: '',
-        disponible: false,
-        precio: '1000'
-      },
-    ];
   }
 
   ngOnInit() {
+    this.auth.userProfile$.subscribe(user => {
+      if (user) {
+        this.miUsuario = user.nickname;
+      }
+    });
+
+    this.productsService.getProducts().subscribe(products => {
+      this.listaProducts = products;
+      console.log(products);
+    });
   }
 
 }

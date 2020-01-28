@@ -15,45 +15,11 @@ export class ProductsListComponent implements OnInit {
   constructor(
     private auth: AuthService
   ) {
-    console.log(this.auth.userProfile$.source);
-    this.miUsuario = 'yo';
-    this.listaProducts = [
-      {
-        id: '1',
-        name: 'zapatos',
-        comprador: 'yo',
-        disponible: false,
-        precio: '1000'
-      },
-      {
-        id: '2',
-        name: 'pantalon',
-        comprador: 'mafe',
-        disponible: false,
-        precio: '1000'
-      },
-      {
-        id: '3',
-        name: 'camisa',
-        comprador: '',
-        disponible: false,
-        precio: '1000'
-      },
-      {
-        id: '4',
-        name: 'gorra',
-        comprador: 'cristina',
-        disponible: false,
-        precio: '1000'
-      },
-      {
-        id: '5',
-        name: 'medias',
-        comprador: '',
-        disponible: false,
-        precio: '1000'
-      },
-    ];
+    this.auth.userProfile$.subscribe(user => {
+      if (user) {
+        this.miUsuario = user.nickname;
+      }
+    });
   }
 
   ngOnInit() {

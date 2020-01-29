@@ -9,15 +9,24 @@ import { Product } from '@core/models/product.model';
 export class ProductComponent implements OnInit {
 
   @Input() producto: Product;
-  @Input() usuario: any;
+  isSelected: boolean;
 
-  constructor() { }
+  constructor() {
+    this.isSelected = false;
+  }
 
   ngOnInit() {
   }
 
-  addProduct(product) {
+  pushProduct(e, product) {
+    e.preventDefault()
+    this.isSelected = true;
     console.log("product", product);
+  }
+
+  popProduct(e, product) {
+    e.preventDefault()
+    this.isSelected = false;
   }
 
 }

@@ -39,6 +39,34 @@
       }
     }
   }
+  .product-selected {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.95;
+    background: #09b83f;
+    cursor: auto;
+    .content {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      height: 100%;
+      i {
+        color: white;
+      }
+      .botones {
+        padding-top: 0.5em;
+        a {
+          font-size: 1em;
+          color: white;
+          padding: 0.5em;
+          i {
+            margin-top: -12px;
+          }
+        }
+      }
+    }
+  }
 }
 .product-caption {
   max-width: 400px;

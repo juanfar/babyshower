@@ -1,32 +1,52 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product } from '@core/models/product.model';
+import { CartService } from '@core/services/cart.service';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent {
 
   @Input() producto: Product;
+  @Input() page: string;
   isSelected: boolean;
 
-  constructor() {
+  constructor(
+    private cartService: CartService
+  ) {
     this.isSelected = false;
+    console.log(this.page);
   }
 
-  ngOnInit() {
+  add(e) {
+    e.preventDefault();
+    this.addCart()
+    this.addSelect();
   }
 
-  pushProduct(e, product) {
-    e.preventDefault()
+  remove(e) {
+    e.preventDefault();
+    this.removeCart()
+    this.removeSelect();
+  }
+
+  addCart() {
     this.isSelected = true;
-    console.log("product", product);
+    this.cartService.addCart(this.producto);
   }
 
-  popProduct(e, product) {
-    e.preventDefault()
+  removeCart() {
+    this.isSelected = false;
+    this.cartService.removeCart(this.producto);
+  }
+
+  addSelect() {
+    this.isSelected = true;
+  }
+
+  removeSelect() {
     this.isSelected = false;
   }
-
 }

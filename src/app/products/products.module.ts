@@ -6,10 +6,16 @@ import { ProductRoutingModule } from './product-routing.module';
 
 
 @NgModule({
-  declarations: [ProductsListComponent, ProductComponent],
+  declarations: [
+    ProductsListComponent,
+    ProductComponent
+  ],
   imports: [
     CommonModule,
     ProductRoutingModule
+  ],
+  exports: [
+    ProductComponent
   ]
 })
 export class ProductsModule { }

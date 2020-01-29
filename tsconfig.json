@@ -9,6 +9,7 @@
       "@auth/*": ["src/app/auth/*"],
       "@page-not-found/*": ["src/app/page-not-found/*"],
       "@home/*": ["src/app/home/*"],
+      "@order/*": ["src/app/order/*"],
       "@profile/*": ["src/app/profile/*"],
       "@products/*": ["src/app/products/*"],
     },

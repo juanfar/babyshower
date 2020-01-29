@@ -19,10 +19,13 @@
       </ul>
       <ul class="navbar-nav right-menu" *ngIf="auth.loggedIn">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/products"><i class="fas fa-shopping-cart"></i></a>
+          <a *ngIf="(total$ | async) > 0" [routerLink]="['/orden']" routerLinkActive="router-link-active"  class="nav-link cart-icon" routerLink="/products">
+            <i class="fas fa-gift"></i>
+            <span class='badge badge-warning' id='lblCartCount'> {{total$ | async}} </span>
+          </a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          <a class="nav-link dropdown-toggle user-menu" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             {{ user }}
           </a>

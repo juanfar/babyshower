@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Product } from '@core/models/product.model';
 
 @Component({
   selector: 'app-product',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  @Input() producto: Product;
+  isSelected: boolean;
+
+  constructor() {
+    this.isSelected = false;
+  }
 
   ngOnInit() {
+  }
+
+  pushProduct(e, product) {
+    e.preventDefault()
+    this.isSelected = true;
+    console.log("product", product);
+  }
+
+  popProduct(e, product) {
+    e.preventDefault()
+    this.isSelected = false;
   }
 
 }

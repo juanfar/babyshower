@@ -28,7 +28,6 @@ export class ProductsListComponent implements OnInit {
 
     this.productsService.getProducts().subscribe(products => {
       this.listaProducts = products;
-      console.log(products);
     });
   }
 

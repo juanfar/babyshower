@@ -1,110 +1,49 @@
-@import "variables";
-@import "mixins";
-@import "page";
-
-:host {
-  // Styling for the navbar
-  #mainNav {
-    background-color: $gray-900;
-    .navbar-toggler {
-      font-size: 12px;
-      right: 0;
-      padding: 13px;
-      text-transform: uppercase;
+.navbar {
+	top: 0;
+  position: sticky;
+  z-index: 3;
+  .cart-icon {
+    i {
       color: white;
-      border: 0;
-      background-color: $primary;
-      @include heading-font;
-    }
-    .navbar-brand {
-      color: $primary;
-      @include script-font;
-      &.active,
-      &:active,
-      &:focus,
-      &:hover {
-        color: darken($primary, 10%);
-      }
-    }
-    .navbar-nav {
-      .nav-item {
-        .nav-link {
-          font-size: 90%;
-          font-weight: 400;
-          padding: 0.75em 0;
-          letter-spacing: 1px;
-          color: white;
-          @include heading-font;
-          &.active,
-          &:hover {
-            color: $primary;
-          }
-        }
-      }
-      .cart-icon {
-        i {
-          font-size: 1.3em;
-        }
-        #lblCartCount {
-          background: #ff0000;
-          color: #fff;
-          padding: 2px 5px;
-          vertical-align: top;
-          margin-left: -4px;
-        }
-        &:hover {
-          color: white !important;
-        }
-      }
-      .user-menu {
-        &:hover {
-          color: white !important;
-        }
-      }
+      font-size: 1.5em;
     }
   }
-  @media (min-width: 992px) {
-    #mainNav {
-      padding-top: 5px;
-      padding-bottom: 5px;
-      -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
-      -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
-      transition: padding-top 0.3s, padding-bottom 0.3s;
-      opacity: 0.9;
-      .navbar-brand {
-        font-size: 1.75em;
-        -webkit-transition: all 0.3s;
-        -moz-transition: all 0.3s;
-        transition: all 0.3s;
-      }
-      #navbarResponsive {
-        .right-menu {
-          flex: 1;
-          justify-content: flex-end;
-        }
-        .left-menu {
-          flex: 1;
-          justify-content: center;
-        }
-        .navbar-nav {
-          .nav-item {
-            .nav-link {
-              padding: 1.1em 1em !important;
-            }
-          }
-          .nav-button {
-            margin-top: 0.75em !important;
-          }
+  #lblCartCount {
+    background: #ff0000;
+    color: #fff;
+    padding: 2px 5px;
+    vertical-align: top;
+    margin-left: 1px;
+    margin-top: -5px;
+  }
+  .show {
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    padding: 0.5rem 3rem;
+    .menu {
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      .right-menu {
+        flex: 1;
+        align-self: center;
+        justify-content: flex-end;
+        .dropdown-menu {
+          top: auto;
+          left: auto;
         }
       }
-      &.navbar-shrink {
-        padding-top: 0;
-        padding-bottom: 0;
-        background-color: $gray-900;
-        .navbar-brand {
-          font-size: 1.25em;
-          padding: 12px 0;
-        }
+      .left-menu {
+        flex: 1;
+        align-self: center;
+        justify-content: flex-start;
       }
     }
   }

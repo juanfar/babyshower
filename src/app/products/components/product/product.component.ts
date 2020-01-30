@@ -17,7 +17,6 @@ export class ProductComponent {
     private cartService: CartService
   ) {
     this.isSelected = false;
-    console.log(this.page);
   }
 
   add(e) {

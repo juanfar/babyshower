@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class NavbarComponent implements OnInit {
 
+  navbarOpen = false;
   user: string
   total$: Observable<number>;
 
@@ -37,5 +38,9 @@ export class NavbarComponent implements OnInit {
     .pipe(
       map(products => products.length)
     );
+  }
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
   }
 }

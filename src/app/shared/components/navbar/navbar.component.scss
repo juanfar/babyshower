@@ -112,7 +112,52 @@
  */
 
 .navbar {
-  width: 100%;
-  position: fixed;
+	top: 0;
+  position: sticky;
   z-index: 3;
+  .cart-icon {
+    i {
+      color: white;
+      font-size: 1.5em;
+    }
+  }
+  #lblCartCount {
+    background: #ff0000;
+    color: #fff;
+    padding: 2px 5px;
+    vertical-align: top;
+    margin-left: 1px;
+    margin-top: -5px;
+  }
+  .show {
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    padding: 0.5rem 3rem;
+    .menu {
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      .right-menu {
+        flex: 1;
+        align-self: center;
+        justify-content: flex-end;
+        .dropdown-menu {
+          top: auto;
+          left: auto;
+        }
+      }
+      .left-menu {
+        flex: 1;
+        align-self: center;
+        justify-content: flex-start;
+      }
+    }
+  }
 }

@@ -13,8 +13,9 @@ import { Product } from '@core/models/product.model';
 })
 export class OrderComponent implements OnInit {
 
-  products$: Observable<Product[]>;
+  cartProducts: Product[];
   cartLength: number;
+  cartPrice = 0;
 
   constructor(
     public auth: AuthService,
@@ -22,17 +23,16 @@ export class OrderComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getCart();
+    this.getCartInfo();
   }
 
-  getCart() {
-    this.products$ = this.cartService.cart$;
-    this.products$
-    .pipe(
-      map(products => products.length)
-    )
-    .subscribe(total => {
-      this.cartLength = total;
+  getCartInfo() {
+    this.cartService.cart$.subscribe(products => {
+      this.cartProducts = products;
+      this.cartLength = products.length;
+      products.forEach(product => {
+        this.cartPrice += product.precio;
+      });
     });
   }
 }

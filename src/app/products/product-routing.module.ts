@@ -10,11 +10,6 @@ const routes: Routes = [
     component: ProductsListComponent,
     canActivate: [ AuthGuard ]
   },
-  {
-    path: ':id',
-    component: ProductComponent,
-    canActivate: [ AuthGuard ]
-  },
 ];
 
 @NgModule({

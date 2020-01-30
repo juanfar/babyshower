@@ -14,7 +14,10 @@
       flex: 1;
       .card {
         padding: 5%;
-        .list-group {
+        .botones {
+          padding-top: 5%;
+          display: flex;
+          justify-content: space-between;
         }
       }
     }

@@ -35,4 +35,11 @@ export class OrderComponent implements OnInit {
       });
     });
   }
+
+  sendOrder() {
+
+  }
+  cancelOrder() {
+    
+  }
 }

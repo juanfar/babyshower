@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProductsListComponent } from './components/products-list/products-list.component';
-import { ProductComponent } from './components/product/product.component';
+import { OrderComponent } from './components/order/order.component';
 import { AuthGuard } from '@core/guards/auth.guard';
+
 
 const routes: Routes = [
   {
     path: '',
-    component: ProductsListComponent,
+    component: OrderComponent,
     canActivate: [ AuthGuard ]
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [],
-  declarations: [],
+  exports: [RouterModule]
 })
-export class ProductRoutingModule { }
+export class OrderRoutingModule { }

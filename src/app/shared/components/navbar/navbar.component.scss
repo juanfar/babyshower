@@ -41,6 +41,26 @@
           }
         }
       }
+      .cart-icon {
+        i {
+          font-size: 1.3em;
+        }
+        #lblCartCount {
+          background: #ff0000;
+          color: #fff;
+          padding: 2px 5px;
+          vertical-align: top;
+          margin-left: -4px;
+        }
+        &:hover {
+          color: white !important;
+        }
+      }
+      .user-menu {
+        &:hover {
+          color: white !important;
+        }
+      }
     }
   }
   @media (min-width: 992px) {

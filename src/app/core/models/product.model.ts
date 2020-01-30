@@ -1,6 +1,6 @@
 export interface Product {
   nombre: string;
-  precio: string;
+  precio: number;
   img: string;
   fracionar: boolean;
   compradores?: string[];

@@ -1,0 +1,26 @@
+<div class="order">
+  <div class="products">
+    <app-product [page]="'order'" [producto]="product" *ngFor="let product of cartProducts"
+      class="col-md-4 col-sm-6 product-item">
+    </app-product>
+  </div>
+  <div class="info">
+    <div class="card">
+      <h3>Resumen de Regalos</h3>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Total regalos:
+          <span>{{cartLength}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Total valor:
+          <span>{{cartPrice | currency: "EUR":"symbol"}}</span>
+        </li>
+      </ul>
+      <div class="botones">
+        <button class="btn btn-success" (click)="sendOrder()">Regalar</button>
+        <button class="btn btn-danger" (click)="cancelOrder()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>

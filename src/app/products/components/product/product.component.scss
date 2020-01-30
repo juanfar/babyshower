@@ -3,6 +3,9 @@
 @import "buttons";
 @import "page";
 
+.is-disabled {
+  pointer-events: none;
+}
 .product-link {
   position: relative;
   display: block;

@@ -1,8 +1,6 @@
-<!-- Header -->
 <header class="masthead">
-  <div class="container">
-    <img src="../../../../assets/img/img6.png" alt="" class="responsive">
-    <div class="count">
+  <div class="board" #div (window:resize)="0" [ngStyle]="{'height.px': (div.offsetWidth * 495) / 620}">
+    <div class="countdown">
       <div class="dias">
         <span class="values">32</span>
         <span class="titles">d</span>

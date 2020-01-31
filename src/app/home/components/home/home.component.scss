@@ -4,7 +4,7 @@
 
 // Styling for the masthead
 :host {
-  header.masthead {
+	/* header.masthead {
     height: 100vh;
     text-align: center;
     color: white;
@@ -63,5 +63,52 @@
         }
       }
     }
-  }
+  } */
+	header.masthead {
+		height: 100vh;
+		background-image: url("../../../../assets/img/img1.jpg");
+		background-repeat: no-repeat;
+		background-attachment: scroll;
+		background-position: center center;
+		background-size: cover;
+		display: flex;
+		justify-content: center;
+		.board {
+			background-image: url("../../../../assets/img/img6.png");
+			background-size: cover;
+			align-self: center;
+			max-width: 620px;
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+			.countdown {
+				font-size: 5vw;
+				align-self: flex-end;
+				width: 55%;
+				height: 26%;
+				display: flex;
+				flex-flow: row nowrap;
+				.dias,
+				.horas,
+				.minutos,
+				.segundos {
+					display: flex;
+					margin-left: 3%;
+					color: #b3b2b3;
+				}
+				.titles {
+					font-size: 0.5em;
+				}
+			}
+		}
+	}
+	@media (min-width: 768px) {
+		header.masthead {
+			.board {
+				.countdown {
+					font-size: 2.5vw;
+				}
+			}
+		}
+	}
 }

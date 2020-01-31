@@ -88,17 +88,6 @@
 				height: 26%;
 				display: flex;
 				flex-flow: row nowrap;
-				.dias,
-				.horas,
-				.minutos,
-				.segundos {
-					display: flex;
-					margin-left: 3%;
-					color: #b3b2b3;
-				}
-				.titles {
-					font-size: 0.5em;
-				}
 			}
 		}
 	}

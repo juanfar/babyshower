@@ -5,7 +5,6 @@ interface Date {
   hours: number;
   minutes: number;
   seconds: number;
-  distance: number;
 }
 
 @Component({
@@ -20,30 +19,28 @@ export class CountdownComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // const time = setInterval(() => {
-    //   const cuenta = this.regresiva();
-    //   if (cuenta.distance > 0) {
-    //     this.date = cuenta;
-    //   } else {
-    //     clearInterval(time);
-    //     console.log('terminó');
-    //   }
-    //   console.log(this.date);
-    // }, 1000)
+    const time = setInterval(() => {
+      const distance = this.regresiva();
+      if (distance <= 0) {
+        clearInterval(time);
+        console.log('terminó');
+      }
+    }, 1000);
 
-    
+
   }
 
   regresiva() {
-    const countDownDate = new Date("Jan 31, 2020 14:17:00").getTime();
+    const countDownDate = new Date("Mar 1, 2020 16:00:00").getTime();
     const now = new Date().getTime()
     const distance = countDownDate - now;
+
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    return { days, hours, minutes, seconds, distance };
+    this.date = { days, hours, minutes, seconds };
+    return distance;
   }
 
 }

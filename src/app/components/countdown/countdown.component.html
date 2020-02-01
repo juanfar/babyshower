@@ -1,16 +1,16 @@
-<div class="dias">
+<div *ngIf="date" class="dias">
   <span class="values">{{date.days}}</span>
   <span class="titles">d</span>
 </div>
-<div class="horas">
+<div *ngIf="date" class="horas">
   <span class="values">{{date.hours}}</span>
   <span class="titles">h</span>
 </div>
-<div class="minutos">
+<div *ngIf="date" class="minutos">
   <span class="values">{{date.minutes}}</span>
   <span class="titles">m</span>
 </div>
-<div class="segundos">
+<div *ngIf="date" class="segundos">
   <span class="values">{{date.seconds}}</span>
   <span class="titles">s</span>
 </div>

@@ -5,6 +5,7 @@
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@core/*": ["src/app/core/*"],
+      "@components/*": ["src/app/components/*"],
       "@shared/*": ["src/app/shared/*"],
       "@auth/*": ["src/app/auth/*"],
       "@page-not-found/*": ["src/app/page-not-found/*"],

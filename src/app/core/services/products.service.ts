@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ProductsModule } from '@products/products.module';
 import { Product } from '@core/models/product.model';
 
 @Injectable({
@@ -16,5 +15,9 @@ export class ProductsService {
 
   getProducts() {
     return this.http.get<Product[]>(`${this.apiUrl}/products`);
+  }
+
+  sendProducts(products) {
+    return this.http.put<Product[]>(`${this.apiUrl}/products`, products);
   }
 }

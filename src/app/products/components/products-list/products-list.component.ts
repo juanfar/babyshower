@@ -16,19 +16,21 @@ export class ProductsListComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private productsService: ProductsService
-  ) {
-  }
-
+  ) {}
   ngOnInit() {
+    this.getAuth();
+    this.getProducts();
+  }
+  getAuth() {
     this.auth.userProfile$.subscribe(user => {
       if (user) {
         this.miUsuario = user.nickname;
       }
     });
-
+  }
+  getProducts() {
     this.productsService.getProducts().subscribe(products => {
       this.listaProducts = products;
     });
   }
-
 }

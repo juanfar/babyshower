@@ -23,4 +23,8 @@ export class CartService {
     this.products = this.products.filter(item => item !== product);
     this.cart.next(this.products);
   }
+  cleanCart() {
+    this.products = [];
+    this.cart.next(this.products);
+  }
 }

@@ -17,7 +17,7 @@
       </div>
     </div>
   </div>
-  <img class="img-fluid" [src]="producto.img" alt="" />
+  <img class="img-fluid" [src]="producto.img" (error)="filename = '../../../../assets/img/NoDisponible.gif'" alt="" />
 </a>
 <div *ngIf="producto.disponible" class="product-caption">
   <h4>{{ producto.nombre }}</h4>

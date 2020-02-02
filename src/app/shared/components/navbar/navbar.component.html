@@ -2,8 +2,12 @@
   <a class="navbar-brand" href="#">
     <i class="fas fa-baby-carriage fa-2x"></i>
   </a>
-  
 
+  <a *ngIf="(total$ | async) > 0" [routerLink]="['/orden']" routerLinkActive="router-link-active"  class="nav-link cart-icon in-mobile" routerLink="/products">
+    <i class="fas fa-baby"></i>
+    <span class='badge badge-warning' id='lblCartCount'> {{total$ | async}} </span>
+  </a>
+  
   <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -19,7 +23,7 @@
         </li>
       </ul>
       <ul class="navbar-nav right-menu">
-        <li *ngIf="auth.loggedIn">
+        <li class="in-web" *ngIf="auth.loggedIn">
           <a *ngIf="(total$ | async) > 0" [routerLink]="['/orden']" routerLinkActive="router-link-active"  class="nav-link cart-icon" routerLink="/products">
             <i class="fas fa-baby"></i>
             <span class='badge badge-warning' id='lblCartCount'> {{total$ | async}} </span>

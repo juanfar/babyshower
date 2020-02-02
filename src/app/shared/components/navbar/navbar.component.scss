@@ -22,6 +22,12 @@
     -webkit-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
   }
+  .in-web {
+    display: none;
+  }
+  .in-mobile {
+    display: block;
+  }
 }
 
 @media (min-width: 992px) {
@@ -46,6 +52,12 @@
         align-self: center;
         justify-content: flex-start;
       }
+    }
+    .in-mobile {
+      display: none;
+    }
+    .in-web {
+      display: block;
     }
   }
 }

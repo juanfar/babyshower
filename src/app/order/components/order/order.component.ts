@@ -67,8 +67,8 @@ export class OrderComponent implements OnInit {
     this.cartService.cleanCart();
     this.router.navigate(['/home']);
   }
-
   cancelOrder() {
-    
+    this.cartService.cleanCart();
+    this.router.navigate(['/products']);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Renderer2, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 interface Date {
   days: number;
@@ -23,11 +23,8 @@ export class CountdownComponent implements OnInit {
       const distance = this.regresiva();
       if (distance <= 0) {
         clearInterval(time);
-        console.log('terminó');
       }
     }, 1000);
-
-
   }
 
   regresiva() {

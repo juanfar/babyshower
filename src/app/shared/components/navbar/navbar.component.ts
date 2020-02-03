@@ -24,7 +24,6 @@ export class NavbarComponent implements OnInit {
     this.getUser();
     this.getCartLength()
   }
-
   getUser() {
     this.auth.userProfile$.subscribe(profile => {
       if(profile && profile.nickname) {
@@ -32,14 +31,12 @@ export class NavbarComponent implements OnInit {
       }      
     });
   }
-
   getCartLength() {
     this.total$ = this.cartService.cart$
     .pipe(
       map(products => products.length)
     );
   }
-
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
   }

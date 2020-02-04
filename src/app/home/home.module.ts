@@ -2,18 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { HomeRoutingModule } from './home-routing.module';
-import { CountdownComponent } from '@components/countdown/countdown.component';
-
+import { ComponentsModule } from '@components/components.module';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    CountdownComponent
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    ComponentsModule
   ]
 })
 export class HomeModule { }

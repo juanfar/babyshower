@@ -8,6 +8,8 @@ import { SharedModule } from '@shared/shared.module';
 import { QuicklinkModule } from 'ngx-quicklink'
 
 import { fakeBackendProvider } from '@core/mocks/fake-backend';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,11 @@ import { fakeBackendProvider } from '@core/mocks/fake-backend';
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
-    QuicklinkModule
+    QuicklinkModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      registrationStrategy: 'registerImmediately'
+    })
   ],
   providers: [fakeBackendProvider],
   bootstrap: [AppComponent]

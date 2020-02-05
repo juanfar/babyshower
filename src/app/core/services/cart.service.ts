@@ -20,7 +20,7 @@ export class CartService {
     this.cart.next(this.products);
   }
   removeCart(product: Product) {
-    this.products = this.products.filter(item => item !== product);
+    this.products = this.products.filter(item => item.id !== product.id);
     this.cart.next(this.products);
   }
   cleanCart() {

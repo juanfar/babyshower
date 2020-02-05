@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '@core/models/product.model';
 import { CartService } from '@core/services/cart.service';
 
@@ -7,7 +7,7 @@ import { CartService } from '@core/services/cart.service';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit {
 
   @Input() producto: Product;
   @Input() page: string;
@@ -15,20 +15,20 @@ export class ProductComponent {
 
   constructor(
     private cartService: CartService
-  ) {
-    this.isSelected = false;
+  ) { console.log(this.page); }
+
+  ngOnInit() {
+    this.getCartItems()
   }
 
   add(e) {
     e.preventDefault();
     this.addCart()
-    this.addSelect();
   }
 
   remove(e) {
     e.preventDefault();
     this.removeCart()
-    this.removeSelect();
   }
 
   addCart() {
@@ -41,11 +41,13 @@ export class ProductComponent {
     this.cartService.removeCart(this.producto);
   }
 
-  addSelect() {
-    this.isSelected = true;
-  }
-
-  removeSelect() {
-    this.isSelected = false;
+  getCartItems() {
+    this.cartService.cart$.subscribe(products => {
+      products.forEach(product => {
+        if (product.id === this.producto.id) {
+          this.isSelected = true;
+        }
+      });
+    });
   }
 }

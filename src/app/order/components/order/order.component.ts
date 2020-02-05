@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '@core/services/cart.service';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { AuthService } from '@core/services/auth.service';
 import { Product } from '@core/models/product.model';
 import { ProductsService } from '@core/services/products.service';
+import { AlertsService } from '@core/services/alerts.service';
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-order',
@@ -24,7 +27,8 @@ export class OrderComponent implements OnInit {
     private cartService: CartService,
     private productsService: ProductsService,
     private router: Router,
-  ) {}
+    private alert: AlertsService
+  ) { }
 
   ngOnInit() {
     this.getUser();
@@ -33,9 +37,9 @@ export class OrderComponent implements OnInit {
   }
   getUser() {
     this.auth.userProfile$.subscribe(profile => {
-      if(profile && profile.nickname) {
+      if (profile && profile.nickname) {
         this.user = profile.nickname
-      }      
+      }
     });
   }
   getCartInfo() {
@@ -53,19 +57,43 @@ export class OrderComponent implements OnInit {
     });
   }
   sendOrder() {
-    const products = JSON.parse(JSON.stringify(this.listaProducts));
-    this.cartProducts.forEach(cartProducts => {
-      products.forEach(products => {
-        if (products.id === cartProducts.id) {
-          products.compradores.push(this.user);
-          products.disponible = false;
-        }
-      });
+    Swal.fire({
+      title: '¿Estas Seguro?',
+      text: 'Estos son los productos que vas a regalar',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, regalar!',
+      cancelButtonText: 'No, Esperar'
+    }).then((result) => {
+      if (result.value) {
+        const products = JSON.parse(JSON.stringify(this.listaProducts));
+        this.cartProducts.forEach(cartProducts => {
+          products.forEach(products => {
+            if (products.id === cartProducts.id) {
+              products.compradores.push(this.user);
+              products.disponible = false;
+            }
+          });
+        });
+        this.productsService.sendProducts(products).subscribe(res => {
+        });
+        Swal.fire(
+          'Gracias!',
+          'Tus Regalos has sido reservados.',
+          'success'
+        )
+        this.cartService.cleanCart();
+        this.router.navigate(['/home']);
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Vale!',
+          'Cuando puedas intentalo de nuevo',
+          'error'
+        )
+        this.cartService.cleanCart();
+        this.router.navigate(['/home']);
+      }
     });
-    this.productsService.sendProducts(products).subscribe(res => {
-    });
-    this.cartService.cleanCart();
-    this.router.navigate(['/home']);
   }
   cancelOrder() {
     this.cartService.cleanCart();

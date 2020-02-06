@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { AuthService } from '@core/services/auth.service';
 import { Product } from '@core/models/product.model';
 import { ProductsService } from '@core/services/products.service';
-import { AlertsService } from '@core/services/alerts.service';
 
 import Swal from 'sweetalert2';
 
@@ -27,7 +26,6 @@ export class OrderComponent implements OnInit {
     private cartService: CartService,
     private productsService: ProductsService,
     private router: Router,
-    private alert: AlertsService
   ) { }
 
   ngOnInit() {

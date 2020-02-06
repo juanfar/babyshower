@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '@core/services/cart.service';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { AuthService } from '@core/services/auth.service';
 import { Product } from '@core/models/product.model';
 import { ProductsService } from '@core/services/products.service';
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-order',
@@ -24,7 +26,7 @@ export class OrderComponent implements OnInit {
     private cartService: CartService,
     private productsService: ProductsService,
     private router: Router,
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getUser();
@@ -33,9 +35,9 @@ export class OrderComponent implements OnInit {
   }
   getUser() {
     this.auth.userProfile$.subscribe(profile => {
-      if(profile && profile.nickname) {
+      if (profile && profile.nickname) {
         this.user = profile.nickname
-      }      
+      }
     });
   }
   getCartInfo() {
@@ -70,5 +72,43 @@ export class OrderComponent implements OnInit {
   cancelOrder() {
     this.cartService.cleanCart();
     this.router.navigate(['/products']);
+  }
+  aceptar() {
+    Swal.fire({
+      title: '¿Estas Seguro?',
+      text: 'Estos son los productos que vas a regalar',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, regalar!',
+      cancelButtonText: 'No, Esperar'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+          'Gracias!',
+          'Tus Regalos has sido reservados.',
+          'success'
+        )
+        this.sendOrder();
+      }
+    });
+  }
+  cancelar() {
+    Swal.fire({
+      title: '¿Estas Seguro?',
+      text: 'Se eliminarán estos productos de tu orden',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, seguro!',
+      cancelButtonText: 'No, Esperar'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+          'Vale!',
+          'Puedes seleccionar nuevos productos',
+          'success'
+        )
+        this.cancelOrder();
+      }
+    });
   }
 }

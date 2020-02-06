@@ -57,6 +57,25 @@ export class OrderComponent implements OnInit {
     });
   }
   sendOrder() {
+    const products = JSON.parse(JSON.stringify(this.listaProducts));
+    this.cartProducts.forEach(cartProducts => {
+      products.forEach(products => {
+        if (products.id === cartProducts.id) {
+          products.compradores.push(this.user);
+          products.disponible = false;
+        }
+      });
+    });
+    this.productsService.sendProducts(products).subscribe(res => {
+    });
+    this.cartService.cleanCart();
+    this.router.navigate(['/home']);
+  }
+  cancelOrder() {
+    this.cartService.cleanCart();
+    this.router.navigate(['/products']);
+  }
+  aceptar() {
     Swal.fire({
       title: '¿Estas Seguro?',
       text: 'Estos son los productos que vas a regalar',
@@ -66,37 +85,32 @@ export class OrderComponent implements OnInit {
       cancelButtonText: 'No, Esperar'
     }).then((result) => {
       if (result.value) {
-        const products = JSON.parse(JSON.stringify(this.listaProducts));
-        this.cartProducts.forEach(cartProducts => {
-          products.forEach(products => {
-            if (products.id === cartProducts.id) {
-              products.compradores.push(this.user);
-              products.disponible = false;
-            }
-          });
-        });
-        this.productsService.sendProducts(products).subscribe(res => {
-        });
         Swal.fire(
           'Gracias!',
           'Tus Regalos has sido reservados.',
           'success'
         )
-        this.cartService.cleanCart();
-        this.router.navigate(['/home']);
-      } else if (result.dismiss === Swal.DismissReason.cancel) {
-        Swal.fire(
-          'Vale!',
-          'Cuando puedas intentalo de nuevo',
-          'error'
-        )
-        this.cartService.cleanCart();
-        this.router.navigate(['/home']);
+        this.sendOrder();
       }
     });
   }
-  cancelOrder() {
-    this.cartService.cleanCart();
-    this.router.navigate(['/products']);
+  cancelar() {
+    Swal.fire({
+      title: '¿Estas Seguro?',
+      text: 'Se eliminarán estos productos de tu orden',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, seguro!',
+      cancelButtonText: 'No, Esperar'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+          'Vale!',
+          'Puedes seleccionar nuevos productos',
+          'success'
+        )
+        this.cancelOrder();
+      }
+    });
   }
 }

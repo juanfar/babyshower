@@ -6,7 +6,7 @@ import { AuthService } from '@core/services/auth.service';
 import { Product } from '@core/models/product.model';
 import { ProductsService } from '@core/services/products.service';
 
-import Swal from 'sweetalert2';
+import { Confirmable } from '@core/decorators/confirmable.decorator';
 
 @Component({
   selector: 'app-order',
@@ -54,6 +54,8 @@ export class OrderComponent implements OnInit {
       this.listaProducts = products;
     });
   }
+
+  @Confirmable()
   sendOrder() {
     const products = JSON.parse(JSON.stringify(this.listaProducts));
     this.cartProducts.forEach(cartProducts => {
@@ -69,46 +71,10 @@ export class OrderComponent implements OnInit {
     this.cartService.cleanCart();
     this.router.navigate(['/home']);
   }
+
+  @Confirmable()
   cancelOrder() {
     this.cartService.cleanCart();
     this.router.navigate(['/products']);
-  }
-  aceptar() {
-    Swal.fire({
-      title: '¿Estas Seguro?',
-      text: 'Estos son los productos que vas a regalar',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Si, regalar!',
-      cancelButtonText: 'No, Esperar'
-    }).then((result) => {
-      if (result.value) {
-        Swal.fire(
-          'Gracias!',
-          'Tus Regalos has sido reservados.',
-          'success'
-        )
-        this.sendOrder();
-      }
-    });
-  }
-  cancelar() {
-    Swal.fire({
-      title: '¿Estas Seguro?',
-      text: 'Se eliminarán estos productos de tu orden',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Si, seguro!',
-      cancelButtonText: 'No, Esperar'
-    }).then((result) => {
-      if (result.value) {
-        Swal.fire(
-          'Vale!',
-          'Puedes seleccionar nuevos productos',
-          'success'
-        )
-        this.cancelOrder();
-      }
-    });
   }
 }

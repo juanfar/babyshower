@@ -1,15 +1,15 @@
 import Swal from 'sweetalert2';
 
 export function Confirmable() {
-  return function (target: Object, key: string | symbol, descriptor: PropertyDescriptor) {
+  return (target: object, key: string | symbol, descriptor: PropertyDescriptor) => {
     const original = descriptor.value;
-    descriptor.value = function () {
-      const message = msg(key);    
+    descriptor.value = function() {
+      const message = msg(key);
 
       return confirmacion(this, original, message);
-    }
+    };
     return descriptor;
-  }
+  };
 }
 
 function confirmacion(obj, original, message) {
@@ -20,19 +20,20 @@ function confirmacion(obj, original, message) {
     showCancelButton: true,
     confirmButtonText: message.confirmButtonText,
     cancelButtonText: message.cancelButtonText
-  }).then((result) => {
-    if (result.value) {
+  }).then((res) => {
+    if (res.value) {
       Swal.fire(
         message.subtitle,
         message.subtext,
         'success'
-      )
+      );
       const result = original.apply(obj);
       return result;
-    } else return null;
+    } else {
+      return null;
+    }
   });
 }
-
 
 function msg(key) {
   return {
@@ -64,5 +65,5 @@ function msg(key) {
       key === 'sendOrder' ? 'Tus Regalos has sido reservados.' :
       key === 'cancelOrder' ? 'Puedes seleccionar nuevos productos' :
       '',
-  }
+  };
 }

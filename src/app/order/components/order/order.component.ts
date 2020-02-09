@@ -4,9 +4,9 @@ import { Router } from '@angular/router';
 
 import { AuthService } from '@core/services/auth.service';
 import { Product } from '@core/models/product.model';
-import { ProductsService } from '@core/services/products.service';
 
 import { Confirmable } from '@core/decorators/confirmable.decorator';
+import { ProductsFirebaseService } from '@core/services/products-firebase.service';
 
 @Component({
   selector: 'app-order',
@@ -24,7 +24,7 @@ export class OrderComponent implements OnInit {
   constructor(
     public auth: AuthService,
     private cartService: CartService,
-    private productsService: ProductsService,
+    private productsService: ProductsFirebaseService,
     private router: Router,
   ) { }
 
@@ -36,7 +36,7 @@ export class OrderComponent implements OnInit {
   getUser() {
     this.auth.userProfile$.subscribe(profile => {
       if (profile && profile.nickname) {
-        this.user = profile.nickname
+        this.user = profile.nickname;
       }
     });
   }
@@ -52,21 +52,28 @@ export class OrderComponent implements OnInit {
   getProducts() {
     this.productsService.getProducts().subscribe(products => {
       this.listaProducts = products;
+      console.log('BBB1 -> ', this.listaProducts);
     });
+    console.log('BBB2 -> ', this.listaProducts);
   }
 
   @Confirmable()
   sendOrder() {
-    const products = JSON.parse(JSON.stringify(this.listaProducts));
+    const products = this.listaProducts;
     this.cartProducts.forEach(cartProducts => {
-      products.forEach(products => {
-        if (products.id === cartProducts.id) {
-          products.compradores.push(this.user);
-          products.disponible = false;
+      products.forEach(product => {
+        if (product.id === cartProducts.id) {
+          const body = {
+            compradores: [this.user],
+            disponible: false
+          };
+          product.compradores.push(this.user);
+          product.disponible = false;
+          this.productsService.sendProducts(body, product.id).subscribe(res => {
+            console.log(res);
+          });
         }
       });
-    });
-    this.productsService.sendProducts(products).subscribe(res => {
     });
     this.cartService.cleanCart();
     this.router.navigate(['/home']);

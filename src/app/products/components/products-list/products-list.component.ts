@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '@core/services/auth.service';
 import { Product } from '@core/models/product.model';
-import { ProductsService } from '@core/services/products.service';
+import { ProductsFirebaseService } from '@core/services/products-firebase.service';
 
 @Component({
   selector: 'app-products-list',
@@ -15,7 +15,7 @@ export class ProductsListComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private productsService: ProductsService
+    private productsService: ProductsFirebaseService
   ) {}
   ngOnInit() {
     this.getAuth();

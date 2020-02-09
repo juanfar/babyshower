@@ -26,7 +26,7 @@ import { environment } from '../environments/environment';
       registrationStrategy: 'registerImmediately'
     })
   ],
-  providers: [fakeBackendProvider],
+  // providers: [fakeBackendProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

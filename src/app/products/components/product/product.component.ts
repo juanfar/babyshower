@@ -18,17 +18,17 @@ export class ProductComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getCartItems()
+    this.getCartItems();
   }
 
   add(e) {
     e.preventDefault();
-    this.addCart()
+    this.addCart();
   }
 
   remove(e) {
     e.preventDefault();
-    this.removeCart()
+    this.removeCart();
   }
 
   addCart() {

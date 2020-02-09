@@ -4,6 +4,7 @@
     "baseUrl": "./",
     "paths": {
       "@assets/*": ["src/assets/*"],
+      "@common/*": ["src/common/*"],
       "@core/*": ["src/app/core/*"],
       "@components/*": ["src/app/components/*"],
       "@shared/*": ["src/app/shared/*"],

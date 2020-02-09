@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '@core/models/product.model';
+import { GlobalConstants } from 'src/app/common/global-constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsFirebaseService {
 
-  apiUrl = 'https://us-central1-babyshower-3ae23.cloudfunctions.net/api';
+  apiUrl = GlobalConstants.apiURL;
 
   constructor(
     private http: HttpClient
@@ -18,6 +19,7 @@ export class ProductsFirebaseService {
   }
 
   sendProducts(body, id) {
+    console.log(body);
     return this.http.put<Product[]>(`${this.apiUrl}/products/${id}`, body);
   }
 }

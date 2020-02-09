@@ -52,9 +52,7 @@ export class OrderComponent implements OnInit {
   getProducts() {
     this.productsService.getProducts().subscribe(products => {
       this.listaProducts = products;
-      console.log('BBB1 -> ', this.listaProducts);
     });
-    console.log('BBB2 -> ', this.listaProducts);
   }
 
   @Confirmable()
@@ -67,8 +65,6 @@ export class OrderComponent implements OnInit {
             compradores: [this.user],
             disponible: false
           };
-          product.compradores.push(this.user);
-          product.disponible = false;
           this.productsService.sendProducts(body, product.id).subscribe(res => {
             console.log(res);
           });

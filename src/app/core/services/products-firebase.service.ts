@@ -25,6 +25,6 @@ export class ProductsFirebaseService {
   }
 
   getMyProducts(user) {
-    return this.http.get<Product[]>(`${this.apiUrl}/products/?usuario=${user}`);
+    return this.http.get<Product[]>(`${this.apiUrl}/products/${user}`);
   }
 }

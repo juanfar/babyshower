@@ -1,3 +1,17 @@
-<pre *ngIf="auth.userProfile$ | async as profile">
-  <code>{{ profile | json }}</code>
-</pre>
+<div class="profile">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h3 class="section-heading text-uppercase">{{miUsuario}}</h3>
+      <h4 class="section-subheading text-muted">
+        Estamos muy agredecidos con tu apoyo!
+      </h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="products">
+      <app-product [page]="'profile'" [producto]="product" *ngFor="let product of listaProducts"
+        class="col-md-3 col-sm-6 product-item">
+      </app-product>
+    </div>
+  </div>
+</div>

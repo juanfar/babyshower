@@ -1,0 +1,39 @@
+:host {
+	.profile {
+		margin-top: 8%;
+		display: flex;
+		flex-flow: column nowrap;
+		.products {
+			padding: 2%;
+      order: 2;
+			display: flex;
+			flex-flow: row wrap;
+		}
+		.info {
+			padding: 2%;
+      order: 1;
+			.card {
+				padding: 5%;
+				.botones {
+					padding-top: 5%;
+					display: flex;
+					justify-content: space-between;
+				}
+			}
+		}
+	}
+	@media (min-width: 768px) {
+		.order {
+			display: flex;
+      flex-flow: row nowrap;
+      .products {
+				flex: 2;
+				order: 1;
+      }
+      .info {
+				flex: 1;
+				order: 2;
+      }
+		}
+	}
+}

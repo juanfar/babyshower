@@ -10,6 +10,7 @@
     </div>
     <div class="row">
       <app-product
+        [page]="'products'"
         [ngClass]="{ 'is-disabled': !product.disponible }"
         [producto]="product"
         *ngFor="let product of listaProducts"

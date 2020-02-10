@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileRoutingModule } from './profile-routing.module';
+import { ProductsModule } from '@products/products.module';
 
 
 
@@ -9,7 +10,8 @@ import { ProfileRoutingModule } from './profile-routing.module';
   declarations: [ProfileComponent],
   imports: [
     CommonModule,
-    ProfileRoutingModule
+    ProfileRoutingModule,
+    ProductsModule
   ]
 })
 export class ProfileModule { }

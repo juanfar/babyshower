@@ -62,7 +62,7 @@ export class OrderComponent implements OnInit {
       products.forEach(product => {
         if (product.id === cartProducts.id) {
           const body = {
-            compradores: [this.user],
+            comprador: this.user,
             disponible: false
           };
           this.productsService.sendProducts(body, product.id).subscribe(res => {

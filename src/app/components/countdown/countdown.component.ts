@@ -28,16 +28,24 @@ export class CountdownComponent implements OnInit {
   }
 
   regresiva() {
-    const countDownDate = new Date("Mar 1, 2020 16:00:00").getTime();
-    const now = new Date().getTime()
+    const countDownDate = new Date('Mar 1, 2020 16:00:00').getTime();
+    const now = new Date().getTime();
     const distance = countDownDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const days = this.formatDate(Math.floor(distance / (1000 * 60 * 60 * 24)));
+    const hours = this.formatDate(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+    const minutes = this.formatDate(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+    const seconds = this.formatDate(Math.floor((distance % (1000 * 60)) / 1000));
     this.date = { days, hours, minutes, seconds };
     return distance;
+  }
+
+  formatDate(date) {
+    if (date < 10) {
+      return `0${date.toString()}`;
+    } else {
+      return date;
+    }
   }
 
 }

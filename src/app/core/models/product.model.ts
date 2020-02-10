@@ -1,10 +1,10 @@
 export interface Product {
-  id?: string;
+  id: string;
   nombre: string;
   precio: number;
   img: string;
   fracionar: boolean;
-  compradores?: string[];
+  comprador: string;
   disponible: boolean;
   url: string;
 }

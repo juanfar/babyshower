@@ -23,7 +23,7 @@ export class ProductComponent implements OnInit {
     this.getCartItems();
     setInterval(() => {
       this.loading = false;
-    }, 3000);
+    }, 2000);
   }
 
   add(e) {

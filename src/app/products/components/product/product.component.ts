@@ -12,6 +12,7 @@ export class ProductComponent implements OnInit {
   @Input() producto: Product;
   @Input() page: string;
   isSelected: boolean;
+  loading = true;
 
   constructor(
     private cartService: CartService
@@ -19,6 +20,9 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
     this.getCartItems();
+    setInterval(() => {
+      this.loading = false;
+    }, 3000);
   }
 
   add(e) {

@@ -1,4 +1,7 @@
-<a [ngClass]="{'is-disabled': page !== 'products'}" class="product-link" data-toggle="modal" href="#">
+<app-skeleton *ngIf="loading" Cwidth="100" Cheight="100">
+</app-skeleton>
+<div [ngClass]="{ 'is-disabled': !producto.disponible }" class="product" *ngIf="!loading">
+<a [ngClass]="{'not-events': page !== 'products'}" class="product-link" data-toggle="modal" href="#">
   <div *ngIf="page === 'products'" class="product-hover">
     <div class="product-hover-content">
       <div class="botones">
@@ -25,4 +28,5 @@
 </div>
 <div *ngIf="!producto.disponible && page === 'products'" class="product-caption">
   <h4><i class="fas fa-ban"></i> NO DISPONIBLE</h4>
+</div>
 </div>

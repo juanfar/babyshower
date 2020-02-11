@@ -5,11 +5,13 @@ import { RouterModule } from '@angular/router';
 import { QuicklinkModule } from 'ngx-quicklink'
 
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SkeletonComponent } from './components/skeleton/skeleton.component';
 
 
 @NgModule({
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+    SkeletonComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     QuicklinkModule
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
+    SkeletonComponent
   ]
 })
 export class SharedModule { }

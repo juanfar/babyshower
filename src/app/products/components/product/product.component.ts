@@ -12,13 +12,14 @@ export class ProductComponent implements OnInit {
   @Input() producto: Product;
   @Input() page: string;
   isSelected: boolean;
-  loading = true;
+  loading: boolean;
 
   constructor(
     private cartService: CartService
   ) {}
 
   ngOnInit() {
+    this.loading = this.page === 'products' ? true : false;
     this.getCartItems();
     setInterval(() => {
       this.loading = false;

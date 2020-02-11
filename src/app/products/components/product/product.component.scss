@@ -5,6 +5,10 @@
 
 .is-disabled {
   pointer-events: none;
+  opacity: 0.3;
+}
+.not-events {
+  pointer-events: none;
 }
 .product-link {
   position: relative;

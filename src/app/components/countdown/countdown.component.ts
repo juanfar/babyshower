@@ -47,5 +47,4 @@ export class CountdownComponent implements OnInit {
       return date;
     }
   }
-
 }

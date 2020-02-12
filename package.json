@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "analyzer": "webpack-bundle-analyzer dist/babyshower/stats-es2015.json"
+    "analyzer": "webpack-bundle-analyzer dist/babyshower/stats-es2015.json",
+    "int:extract": "ng xi18n --output-path locale"
   },
   "private": true,
   "dependencies": {

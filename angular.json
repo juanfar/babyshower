@@ -74,7 +74,13 @@
               ],
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
-            }
+            },
+            "fr": {
+              "aot": true,
+              "outputPath": "dist/under-c-fr/",
+              "i18nFile": ""
+            },
+            "en": {}
           }
         },
         "serve": {

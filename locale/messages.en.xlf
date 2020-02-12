@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="tituloPagina" datatype="html">
+        <source>Regálos</source>
+        <target>Gifts</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/products/components/products-list/products-list.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Titulo para la pagina de regalos</note>
+      </trans-unit>
+      <trans-unit id="decripcionPagina" datatype="html">
+        <source>Elige tu regalo para nuestro bebé.</source>
+        <target>Choose your gift for ower baby.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/products/components/products-list/products-list.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Descripcion para la pagina de regalos</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

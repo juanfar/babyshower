@@ -1,6 +1,6 @@
 :host {
 	.order {
-		margin-top: 8%;
+		padding-top: 22%;
 		display: flex;
 		flex-flow: column nowrap;
 		.products {
@@ -24,6 +24,7 @@
 	}
 	@media (min-width: 768px) {
 		.order {
+			padding-top: 8%;
 			display: flex;
       flex-flow: row nowrap;
       .products {

@@ -5,6 +5,7 @@
 
 :host {
   .product {
+    padding-top: 22%;
     text-align: center;
     background-attachment: scroll;
     background-position: center center;
@@ -31,6 +32,7 @@
   }
   @media (min-width: 767px) {
     .product {
+      padding-top: 5%;
       .product-item {
         margin: 0 0 30px;
       }

@@ -10,6 +10,7 @@ import { Product } from '@core/models/product.model';
 })
 export class ProfileComponent implements OnInit {
 
+  title: string;
   listaProducts: Product[];
   miUsuario: string;
 
@@ -34,6 +35,9 @@ export class ProfileComponent implements OnInit {
   getMyProducts() {
     this.productsService.getMyProducts(this.miUsuario).subscribe(products => {
       this.listaProducts = products;
+      this.title =
+      this.listaProducts.length > 0 ? 'Estamos muy agredecidos con tu apoyo!' :
+      'No tienes regalos confirmados!.';
     });
   }
 

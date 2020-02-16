@@ -16,10 +16,10 @@
     <div class="menu">
       <ul class="navbar-nav left-menu">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" routerLink="/home">Inicio</a>
+          <a class="nav-link js-scroll-trigger" routerLink="/home" (click)="toggleNavbar()">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" routerLink="/products">Regalos</a>
+          <a class="nav-link js-scroll-trigger" routerLink="/products" (click)="toggleNavbar()">Regalos</a>
         </li>
       </ul>
       <ul class="navbar-nav right-menu">
@@ -35,7 +35,7 @@
             {{ user }}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" routerLink="/profile"><i class="fas fa-user"></i> Perfil</a>
+            <a class="dropdown-item" routerLink="/profile" (click)="toggleNavbar()"><i class="fas fa-user"></i>Perfil</a>
             <a class="dropdown-item" href="#" (click)="auth.logout()"><i class="fas fa-power-off"></i> Salir</a>
           </div>
         </li>

@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 export class NavbarComponent implements OnInit {
 
   navbarOpen = false;
-  user: string
+  user: string;
   total$: Observable<number>;
 
   constructor(
@@ -22,13 +22,13 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.getUser();
-    this.getCartLength()
+    this.getCartLength();
   }
   getUser() {
     this.auth.userProfile$.subscribe(profile => {
-      if(profile && profile.nickname) {
-        this.user = profile.nickname
-      }      
+      if (profile && profile.nickname) {
+        this.user = profile.nickname;
+      }
     });
   }
   getCartLength() {
